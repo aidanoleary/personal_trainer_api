@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails personal_trainer_api: development" uuid="206b0ec5-7a4d-41f0-b48c-843b2b68a9d3">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails personal_trainer_api: test" uuid="d557ceaf-8f87-486d-bc62-1935e2c55340">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
