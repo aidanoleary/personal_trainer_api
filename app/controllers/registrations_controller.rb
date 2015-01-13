@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   #skip_before_filter :verify_authenticity_token,
   #                   :if => Proc.new { |c| c.request.format == 'application/json' }
 
-  respond_to :json
+  respond_to :json, :html
 
   def create
     @user = User.create(user_params)
