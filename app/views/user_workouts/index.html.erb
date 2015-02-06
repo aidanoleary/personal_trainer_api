@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Workouts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Workout</th>
+      <th>Workout date</th>
+      <th>Time taken</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_workouts.each do |user_workout| %>
+      <tr>
+        <td><%= user_workout.user_id %></td>
+        <td><%= user_workout.workout_id %></td>
+        <td><%= user_workout.workout_date %></td>
+        <td><%= user_workout.time_taken %></td>
+        <td><%= link_to 'Show', user_workout %></td>
+        <td><%= link_to 'Edit', edit_user_workout_path(user_workout) %></td>
+        <td><%= link_to 'Destroy', user_workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User workout', new_user_workout_path %>

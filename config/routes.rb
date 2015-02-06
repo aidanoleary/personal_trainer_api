@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  resources :user_workout_exercises
+
+  resources :exercises
+
+  resources :workout_exercises
+
+  resources :workouts
+
+  resources :user_workouts
+
+  resources :achievements
+
+  resources :user_achievements
+
+  resources :user_stats
+
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config

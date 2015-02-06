@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_workout.user_id %>
+</p>
+
+<p>
+  <strong>Workout:</strong>
+  <%= @user_workout.workout_id %>
+</p>
+
+<p>
+  <strong>Workout date:</strong>
+  <%= @user_workout.workout_date %>
+</p>
+
+<p>
+  <strong>Time taken:</strong>
+  <%= @user_workout.time_taken %>
+</p>
+
+<%= link_to 'Edit', edit_user_workout_path(@user_workout) %> |
+<%= link_to 'Back', user_workouts_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@user_stat) do |f| %>
+  <% if @user_stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_stat.errors.count, "error") %> prohibited this user_stat from being saved:</h2>
+
+      <ul>
+      <% @user_stat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :points %><br>
+    <%= f.number_field :points %>
+  </div>
+  <div class="field">
+    <%= f.label :total_reps %><br>
+    <%= f.number_field :total_reps %>
+  </div>
+  <div class="field">
+    <%= f.label :total_weight %><br>
+    <%= f.text_field :total_weight %>
+  </div>
+  <div class="field">
+    <%= f.label :total_cardio %><br>
+    <%= f.text_field :total_cardio %>
+  </div>
+  <div class="field">
+    <%= f.label :total_distance %><br>
+    <%= f.text_field :total_distance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

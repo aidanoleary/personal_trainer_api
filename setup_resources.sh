@@ -24,9 +24,12 @@ rails generate scaffold Workout name:string description:text;
 rails generate scaffold WorkoutExercise workout_id:integer exercise_id:integer;
 
 # Exercise
-rails generate scaffold Exercise name:string description:text muscle:string type:string image_url:string;
+rails generate scaffold Exercise name:string description:text level:string main_muscle:string other_muscles:string equipment:string type:string mechanics:string image_url:string;
 
 #User_Workout_Exercise
-rails generate scaffold UserWorkoutExercise user_workout_id:integer exercise_id:integer number_of_reps:integer;
+rails generate scaffold UserWorkoutExercise user_workout_id:integer exercise_id:integer number_of_reps:integer number_of_sets:integer;
+
+# Migrate the database after creating all the tables
+rake db:migrate;
 
 echo "Finished script";

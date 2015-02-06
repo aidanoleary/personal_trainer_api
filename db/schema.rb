@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113182701) do
+ActiveRecord::Schema.define(version: 20150206115142) do
+
+  create_table "achievements", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -46,6 +54,55 @@ ActiveRecord::Schema.define(version: 20150113182701) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "exercises", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "level"
+    t.string   "main_muscle"
+    t.string   "other_muscles"
+    t.string   "equipment"
+    t.string   "type"
+    t.string   "mechanics"
+    t.string   "image_url"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "user_achievements", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "achievement_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "user_stats", force: :cascade do |t|
+    t.integer  "points"
+    t.integer  "total_reps"
+    t.decimal  "total_weight"
+    t.decimal  "total_cardio"
+    t.decimal  "total_distance"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "user_workout_exercises", force: :cascade do |t|
+    t.integer  "user_workout_id"
+    t.integer  "exercise_id"
+    t.integer  "number_of_reps"
+    t.integer  "number_of_sets"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "user_workouts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "workout_id"
+    t.date     "workout_date"
+    t.time     "time_taken"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -65,5 +122,19 @@ ActiveRecord::Schema.define(version: 20150113182701) do
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "workout_exercises", force: :cascade do |t|
+    t.integer  "workout_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end

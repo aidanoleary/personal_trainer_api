@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Workout Exercises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Workout</th>
+      <th>Exercise</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workout_exercises.each do |workout_exercise| %>
+      <tr>
+        <td><%= workout_exercise.workout_id %></td>
+        <td><%= workout_exercise.exercise_id %></td>
+        <td><%= link_to 'Show', workout_exercise %></td>
+        <td><%= link_to 'Edit', edit_workout_exercise_path(workout_exercise) %></td>
+        <td><%= link_to 'Destroy', workout_exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workout exercise', new_workout_exercise_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  points: 1
+  total_reps: 1
+  total_weight: 9.99
+  total_cardio: 9.99
+  total_distance: 9.99
+
+two:
+  points: 1
+  total_reps: 1
+  total_weight: 9.99
+  total_cardio: 9.99
+  total_distance: 9.99

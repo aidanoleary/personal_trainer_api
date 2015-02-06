@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exercise.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exercise.description %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @exercise.level %>
+</p>
+
+<p>
+  <strong>Main muscle:</strong>
+  <%= @exercise.main_muscle %>
+</p>
+
+<p>
+  <strong>Other muscles:</strong>
+  <%= @exercise.other_muscles %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @exercise.equipment %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @exercise.type %>
+</p>
+
+<p>
+  <strong>Mechanics:</strong>
+  <%= @exercise.mechanics %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @exercise.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %>

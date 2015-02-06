@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  level: MyString
+  main_muscle: MyString
+  other_muscles: MyString
+  equipment: MyString
+  type: 
+  mechanics: MyString
+  image_url: MyString
+
+two:
+  name: MyString
+  description: MyText
+  level: MyString
+  main_muscle: MyString
+  other_muscles: MyString
+  equipment: MyString
+  type: 
+  mechanics: MyString
+  image_url: MyString
