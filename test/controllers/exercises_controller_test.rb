@@ -18,7 +18,7 @@ class ExercisesControllerTest < ActionController::TestCase
 
   test "should create exercise" do
     assert_difference('Exercise.count') do
-      post :create, exercise: { description: @exercise.description, equipment: @exercise.equipment, image_url: @exercise.image_url, level: @exercise.level, main_muscle: @exercise.main_muscle, mechanics: @exercise.mechanics, name: @exercise.name, other_muscles: @exercise.other_muscles, type: @exercise.type }
+      post :create, exercise: { description: @exercise.description, e_type: @exercise.e_type, equipment: @exercise.equipment, image_url: @exercise.image_url, level: @exercise.level, main_muscle: @exercise.main_muscle, mechanics: @exercise.mechanics, name: @exercise.name, other_muscles: @exercise.other_muscles }
     end
 
     assert_redirected_to exercise_path(assigns(:exercise))
@@ -35,7 +35,7 @@ class ExercisesControllerTest < ActionController::TestCase
   end
 
   test "should update exercise" do
-    patch :update, id: @exercise, exercise: { description: @exercise.description, equipment: @exercise.equipment, image_url: @exercise.image_url, level: @exercise.level, main_muscle: @exercise.main_muscle, mechanics: @exercise.mechanics, name: @exercise.name, other_muscles: @exercise.other_muscles, type: @exercise.type }
+    patch :update, id: @exercise, exercise: { description: @exercise.description, e_type: @exercise.e_type, equipment: @exercise.equipment, image_url: @exercise.image_url, level: @exercise.level, main_muscle: @exercise.main_muscle, mechanics: @exercise.mechanics, name: @exercise.name, other_muscles: @exercise.other_muscles }
     assert_redirected_to exercise_path(assigns(:exercise))
   end
 

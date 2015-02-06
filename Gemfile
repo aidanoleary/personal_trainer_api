@@ -58,3 +58,5 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 #gem 'sass-rails'
 #gem "meta_search",    '>= 1.1.0.pre'
+
+gem 'cancan'

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :exercises
+
+  devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :user_workout_exercises
 
   resources :exercises
@@ -16,9 +22,6 @@ Rails.application.routes.draw do
 
   resources :user_stats
 
-  devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
-  ActiveAdmin.routes(self)
-  devise_for :admin_users, ActiveAdmin::Devise.config
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

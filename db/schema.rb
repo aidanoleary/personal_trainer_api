@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206121829) do
+ActiveRecord::Schema.define(version: 20150206142909) do
 
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150206121829) do
     t.string   "main_muscle"
     t.string   "other_muscles"
     t.string   "equipment"
-    t.string   "type"
+    t.string   "e_type"
     t.string   "mechanics"
     t.string   "image_url"
     t.datetime "created_at",    null: false

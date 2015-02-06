@@ -7,7 +7,7 @@ one:
   main_muscle: MyString
   other_muscles: MyString
   equipment: MyString
-  type: 
+  e_type: MyString
   mechanics: MyString
   image_url: MyString
 
@@ -18,6 +18,6 @@ two:
   main_muscle: MyString
   other_muscles: MyString
   equipment: MyString
-  type: 
+  e_type: MyString
   mechanics: MyString
   image_url: MyString

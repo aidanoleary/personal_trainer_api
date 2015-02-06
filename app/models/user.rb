@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
 
   has_one :user_stat, dependent: :destroy
 
-  has_many :user_achievements
+  has_many :user_achievements, dependent: :destroy
   has_many :achievements, through: :user_achievements
 
-  has_many :user_workouts
+  has_many :user_workouts, dependent: :destroy
 
  def ensure_authentication_token
    if authentication_token.blank?

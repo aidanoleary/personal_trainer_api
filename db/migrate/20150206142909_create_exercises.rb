@@ -7,7 +7,7 @@ class CreateExercises < ActiveRecord::Migration
       t.string :main_muscle
       t.string :other_muscles
       t.string :equipment
-      t.string :type
+      t.string :e_type
       t.string :mechanics
       t.string :image_url
 
