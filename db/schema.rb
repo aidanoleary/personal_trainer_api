@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206115142) do
+ActiveRecord::Schema.define(version: 20150206121829) do
 
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20150206115142) do
     t.decimal  "total_distance"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "user_id"
   end
 
   create_table "user_workout_exercises", force: :cascade do |t|
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(version: 20150206115142) do
     t.integer  "number_of_sets"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.decimal  "weight"
   end
 
   create_table "user_workouts", force: :cascade do |t|
