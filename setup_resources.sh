@@ -6,7 +6,7 @@
 # User
 
 # User_Stats
-rails generate scaffold UserStat points:integer total_reps:integer total_weight:decimal total_cardio:decimal total_distance:decimal;
+rails generate scaffold UserStat user_id:integer points:integer total_reps:integer total_weight:decimal total_cardio:decimal total_distance:decimal;
 
 # User_Achievement
 rails generate scaffold UserAchievement user_id:integer achievement_id:integer;
@@ -27,7 +27,7 @@ rails generate scaffold WorkoutExercise workout_id:integer exercise_id:integer;
 rails generate scaffold Exercise name:string description:text level:string main_muscle:string other_muscles:string equipment:string type:string mechanics:string image_url:string;
 
 #User_Workout_Exercise
-rails generate scaffold UserWorkoutExercise user_workout_id:integer exercise_id:integer number_of_reps:integer number_of_sets:integer;
+rails generate scaffold UserWorkoutExercise user_workout_id:integer exercise_id:integer number_of_reps:integer number_of_sets:integer weight:decimal;
 
 # Migrate the database after creating all the tables
 rake db:migrate;

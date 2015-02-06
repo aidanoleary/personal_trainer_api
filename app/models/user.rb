@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_one :user_stat, dependent: :destroy
+
+  has_many :user_achievements
+  has_many :achievements, through: :user_achievements
+
+  has_many :user_workouts
+
  def ensure_authentication_token
    if authentication_token.blank?
      self.authentication_token = generate_authentication_token
