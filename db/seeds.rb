@@ -8,23 +8,27 @@
 
 require 'json'
 
-# Create initial admin user
+# Create initial admin users
+# ===============
 AdminUser.destroy_all
 AdminUser.create!(email: "admin@example.com", password: "password", password_confirmation: "password")
 
-print "Admin users have been created."
+print "Admin users have been created.\n"
 
-# Loop over exercise json file and add Exercises
+# Create initial test user
+User.destroy_all
+User.create!(email: "user@example.com", password: "password")
+
+print "Test users have been created.\n"
+
+# Add initial exercises from exercise_data.json file
+# ===============
 Exercise.destroy_all
 Exercise.create!(name: "test_exercise", description: "this is a description", level: "beginner", main_muscle: "chest", other_muscles: "shoulders", equipment: "barbell", e_type: "strength", mechanics: "compound", image_url: "www.fakeimage.com/image.jpg")
 
-#file = File.read('/Users/aidanoleary/RubymineProjects/personal_trainer_api/exercise_data.json')
 file = File.read('exercise_data.json')
 data_hash = JSON.parse(file)
-#print(data_hash['data'].each { |item| item.["level"]join(",") })
 data_hash['data'].each do |item|
-
-  #Exercise.create!(name: item["name"].join(","), description: item["description"].join(","), level: item["level"].join(","), main_muscle: item["main_muscle"].join(","), other_muscles: item[other_muscles].join(","), equipment: item[equipment].join, e_type: item[type].join, mechanics: item[mechanics].join)
   e = Exercise.new
   if item.has_key? "name"
     e.name = item["name"].join(",")
@@ -52,5 +56,4 @@ data_hash['data'].each do |item|
   end
   e.save
 end
-print "Exercises have been added from the file"
-#print data_hash
+print "Exercises have been added from the file\n"
