@@ -21,14 +21,6 @@ ActiveAdmin.register Exercise do
     selectable_column
     id_column
     column :name
-    column :description
-    column :level
-    column :main_muscle
-    column :other_muscles
-    column :equipment
-    column :e_type
-    column :mechanics
-    column :image_url
     column :created_at
     column :updated_at
     actions

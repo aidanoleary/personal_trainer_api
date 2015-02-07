@@ -18,7 +18,8 @@ print "Admin users have been created."
 Exercise.destroy_all
 Exercise.create!(name: "test_exercise", description: "this is a description", level: "beginner", main_muscle: "chest", other_muscles: "shoulders", equipment: "barbell", e_type: "strength", mechanics: "compound", image_url: "www.fakeimage.com/image.jpg")
 
-file = File.read('/Users/aidanoleary/RubymineProjects/personal_trainer_api/exercise_data.json')
+#file = File.read('/Users/aidanoleary/RubymineProjects/personal_trainer_api/exercise_data.json')
+file = File.read('exercise_data.json')
 data_hash = JSON.parse(file)
 #print(data_hash['data'].each { |item| item.["level"]join(",") })
 data_hash['data'].each do |item|
