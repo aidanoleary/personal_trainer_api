@@ -16,6 +16,7 @@ AdminUser.create!(email: "admin@example.com", password: "password", password_con
 print "Admin users have been created.\n"
 
 # Create initial test user
+# ===============
 User.destroy_all
 User.create!(email: "user@example.com", password: "password")
 
