@@ -25,7 +25,7 @@ print "Test users have been created.\n"
 # Add initial exercises from exercise_data.json file
 # ===============
 Exercise.destroy_all
-Exercise.create!(name: "test_exercise", description: "this is a description", level: "beginner", main_muscle: "chest", other_muscles: "shoulders", equipment: "barbell", e_type: "strength", mechanics: "compound", image_url: "www.fakeimage.com/image.jpg")
+Exercise.create!(name: "test_exercise", description: "this is a description", level: "beginner", main_muscle: "chest", other_muscles: "shoulders", equipment: "barbell", e_type: "strength", mechanics: "compound")
 
 file = File.read('exercise_data.json')
 data_hash = JSON.parse(file)
