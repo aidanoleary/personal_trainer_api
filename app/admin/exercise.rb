@@ -15,7 +15,7 @@ ActiveAdmin.register Exercise do
   # end
 
 
-  permit_params :list, :of, :attributes, :on, :model, :name, :description, :level, :main_muscle, :other_muscles, :equipment, :e_type, :mechanics, :image_url
+  permit_params :list, :of, :attributes, :on, :model, :name, :description, :level, :main_muscle, :other_muscles, :equipment, :e_type, :mechanics, :e_image
 
   index do
     selectable_column
@@ -34,7 +34,7 @@ ActiveAdmin.register Exercise do
   filter :e_type
   filter :mechanics
 
-  form do |f|
+  form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs "Exercise Details" do
       f.input :name
       f.input :description
@@ -44,12 +44,12 @@ ActiveAdmin.register Exercise do
       f.input :equipment
       f.input :e_type
       f.input :mechanics
-      f.input :image_url
+      f.input :e_image, :as => :file, :required => false, :hint => f.template.image_tag(f.object.e_image.url(:medium))
     end
     f.actions
   end
 
-  show do
+  show do |exercise|
     attributes_table do
       row :name
       row :description
@@ -59,7 +59,9 @@ ActiveAdmin.register Exercise do
       row :equipment
       row :e_type
       row :mechanics
-      row :image_url
+      row :image do
+        image_tag(exercise.e_image.url(:thumb))
+      end
       row :created_at
       row :updated_at
     end

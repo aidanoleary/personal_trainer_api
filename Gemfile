@@ -60,3 +60,4 @@ gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rai
 #gem "meta_search",    '>= 1.1.0.pre'
 
 gem 'cancan'
+gem 'paperclip', '~> 4.2'

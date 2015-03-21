@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206142909) do
+ActiveRecord::Schema.define(version: 20150321134627) do
 
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
@@ -63,9 +63,12 @@ ActiveRecord::Schema.define(version: 20150206142909) do
     t.string   "equipment"
     t.string   "e_type"
     t.string   "mechanics"
-    t.string   "image_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "e_image_file_name"
+    t.string   "e_image_content_type"
+    t.integer  "e_image_file_size"
+    t.datetime "e_image_updated_at"
   end
 
   create_table "user_achievements", force: :cascade do |t|
