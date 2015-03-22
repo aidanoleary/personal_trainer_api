@@ -32,28 +32,28 @@ data_hash = JSON.parse(file)
 data_hash['data'].each do |item|
   e = Exercise.new
   if item.has_key? "name"
-    e.name = item["name"].join(",")
+    e.name = item["name"].join(",").downcase
   end
   if item.has_key? "description"
     e.description = item["description"].join(",")
   end
   if item.has_key? "level"
-    e.level = item["level"].join(",")
+    e.level = item["level"].join(",").downcase
   end
   if item.has_key? "main_muscle"
-    e.main_muscle = item["main_muscle"].join(",")
+    e.main_muscle = item["main_muscle"].join(",").downcase
   end
   if item.has_key? "other_muscles"
-    e.other_muscles = item["other_muscles"].join(",")
+    e.other_muscles = item["other_muscles"].join(",").downcase
   end
   if item.has_key? "equipment"
-    e.equipment = item["equipment"].join(",")
+    e.equipment = item["equipment"].join(",").downcase
   end
   if item.has_key? "type"
-    e.e_type = item["type"].join(",")
+    e.e_type = item["type"].join(",").downcase
   end
   if item.has_key? "mechanics"
-    e.mechanics = item["mechanics"].join(",")
+    e.mechanics = item["mechanics"].join(",").downcase
   end
   e.save
 end
