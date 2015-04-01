@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150321134627) do
+ActiveRecord::Schema.define(version: 20150401112910) do
 
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 20150321134627) do
     t.integer  "e_image_file_size"
     t.datetime "e_image_updated_at"
   end
+
+  add_index "exercises", ["name"], name: "index_exercises_on_name", unique: true
 
   create_table "user_achievements", force: :cascade do |t|
     t.integer  "user_id"
