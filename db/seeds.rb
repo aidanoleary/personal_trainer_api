@@ -31,10 +31,9 @@ file = File.read('exercise_data.json')
 data_hash = JSON.parse(file)
 
 # Make the entries unique by their name and get rid of duplicate entries from the file.
-data_hash['data'].uniq! { |item|
-  item[:name];
-}
+data_hash['data'].uniq! { |item| item["name"] }
 
+# Add each exercise to the database
 data_hash['data'].each do |item|
   e = Exercise.new
   if item.has_key? "name"
